@@ -18,13 +18,13 @@
 
   <div class="container">
     <div class="jumbotron">
-      <h1>Star Wars Express</h1>
-      <h3>The greatest resource in the galaxy for Star Wars statistics!</h3>
+      <h1>Hot Restaurant</h1>
+      <h3>Cureent Reservation and waiting list</h3>
       <hr>
       <a href="/add"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> Add New
           Character</button></a>
       <a href="/api/characters"><button class="btn btn-danger btn-lg"><span
-            class="fa fa-eye"></span> All Characters</button></a>
+            class="fa fa-eye"></span>Reservation</button></a>
     </div>
     <div class="row">
 
@@ -74,11 +74,11 @@
       $.get("/api/characters/" + searchedCharacter, function(data) {
         console.log(data);
         if (data) {
-          $("#stats").show();
+          $("table").show();
           $("#name").text(data.name);
-          $("#role").text(data.role);
-          $("#age").text(data.age);
-          $("#force-points").text(data.forcePoints);
+          $("#role").text(data.phonenumber);
+          $("#age").text(data.email);
+          $("#force-points").text(data.id);
         } else {
           $("#name").text(
             "The force is not strong with this one. Your character was not found.");
